@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="/icon.jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+    <title>Travio // Map your tour</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="icon.jpg" alt="Image" class="logo img" />
+        <span class="logo content">Travio</span>
+      </div>
+
+      <h3 class="web">Choose a location on the map to save the data.</h3>
+      <ul class="tour">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Type</label>
+            <select class="form__input form__input--type">
+              <option value="" disabled>Select here</option>
+              <option value="visited">Visited</option>
+              <option value="visiting">visiting</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Place</label>
+            <input
+              class="form__input form__input--place"
+              placeholder="Country/Place name"
+              type="text"
+              pattern="[A-Za-z]+"
+              required
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Date</label>
+            <input
+              type="date"
+              class="form__input form__input--date"
+              placeholder="select date"
+              required
+            />
+          </div>
+          <button class="form__btn">Save</button>
+        </form>
+      </ul>
+      <ul class="place deleteAllBtn">
+        Delete Everthing
+      </ul>
+
+      <p class="copyright">
+        &copy; Copyright by
+        <a class="" target="_blank" href="#">Kaviya</a>
+      </p>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>

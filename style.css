@@ -1,0 +1,260 @@
+:root {
+  --color-brand--1: #76addc;
+  --color-brand--2: #ca82eb;
+
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgb(214, 222, 224);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--color-light--2);
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100vh;
+  overscroll-behavior-y: none;
+
+  background-color: #fff;
+  padding: 2.5rem;
+
+  display: flex;
+}
+
+/* GENERAL */
+a:link,
+a:visited {
+  color: var(--color-brand--1);
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex-basis: 50rem;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 4rem;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  background-color: #c2d2e6;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: serif;
+  padding-right: 0.5rem;
+  color: var(--color-dark--1);
+}
+
+.web {
+  margin: 1rem;
+  text-align: center;
+}
+
+.tour {
+  list-style: none;
+  height: 77vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tour::-webkit-scrollbar {
+  width: 0;
+}
+
+.place {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+
+  display: grid;
+  gap: 0.75rem 1.5rem;
+
+  position: relative;
+}
+.place--visited {
+  border-left: 5px solid var(--color-brand--2);
+}
+.place--visiting {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+.place__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
+.btn {
+  margin-left: 120px;
+  cursor: pointer;
+  background-color: var(--color-dark--2);
+  border: none;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+  background: var(--color-dark--2);
+  color: var(--color-light--2);
+}
+
+.deleteAllBtn {
+  visibility: hidden;
+  font-size: 1.7rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.place__icon {
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+  height: 0.28rem;
+}
+
+.place__value {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.form {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.75rem;
+  margin-bottom: 1.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+
+  /* Match height and activity boxes */
+  height: auto;
+  transition: all 0.5s, transform 1ms;
+}
+
+.form.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.form__row {
+  display: grid;
+  align-items: center;
+}
+
+.form__label {
+  flex: 0 0 40%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--3);
+  transition: all 0.2s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.form__btn {
+  margin: 2rem 0 0 0;
+  width: 6rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.copyright {
+  margin-top: auto;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--color-light--1);
+}
+
+.Insta-link:link,
+.Insta-link:visited {
+  color: var(--color-light--1);
+  transition: all 0.2s;
+}
+
+.Insta-link:hover,
+.Insta-link:active {
+  color: var(--color-light--2);
+}
+
+/* MAP */
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-light--1);
+}
+
+/* Popup width is defined in JS using options */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--color-dark--1);
+  color: var(--color-light--2);
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1.5rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--color-dark--1);
+}
+
+.visited-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--2);
+}
+.visiting-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+@media only screen and (max-width: 450px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    padding: 3rem 3rem 4rem 3rem;
+    height: 50vh;
+  }
+}
